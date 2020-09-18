@@ -21,7 +21,7 @@ class Menu extends Component {
         <div key={dish.id} className="col-12 mt-5">
           <Media tag="li">
             <Media left middle>
-              <h4>{dish.name}</h4>
+              <Media heading>{dish.name}</Media>
             </Media>
           </Media>
         </div>
