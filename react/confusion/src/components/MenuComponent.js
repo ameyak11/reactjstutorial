@@ -7,6 +7,7 @@ import {
   CardBody,
   CardTitle,
 } from "reactstrap";
+import DishdetailComponent from "./DishdetailComponent";
 
 class Menu extends Component {
   constructor(props) {
@@ -23,13 +24,14 @@ class Menu extends Component {
   renderDish(dish) {
     if (dish != null) {
       return (
-        <Card>
-          <CardImg width="100%" src={dish.image} alt={dish.name} />
-          <CardBody>
-            <CardTitle>{dish.name}</CardTitle>
-            <CardText>{dish.description}</CardText>
-          </CardBody>
-        </Card>
+        // <Card>
+        //   <CardImg width="100%" src={dish.image} alt={dish.name} />
+        //   <CardBody>
+        //     <CardTitle>{dish.name}</CardTitle>
+        //     <CardText>{dish.description}</CardText>
+        //   </CardBody>
+        // </Card>
+        <DishdetailComponent selectedDish={dish} />
       );
     } else {
       return <div></div>;
@@ -52,7 +54,7 @@ class Menu extends Component {
     return (
       <div className="container">
         <div className="row">{menu}</div>
-        <div className="row">{this.renderDish(this.state.selectedDish)}</div>
+        <div>{this.renderDish(this.state.selectedDish)}</div>
       </div>
     );
   }
